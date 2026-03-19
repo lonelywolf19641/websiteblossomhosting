@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blossom Hosting</title>
+    <link rel="icon" href="/images/BlossomMainLogo.png" />
+    <link rel="stylesheet" href="order.css">
+</head>
+
+<body>
+
+    <header class="navBar">
+        <div class="mainContainer navInner">
+            <a href="index.html" class="logoArea">
+                <img src="images/BlossomMainLogo.png" alt="Blossom Hosting Logo">
+                <div class="BlossomHost1">Blossom Hosting</div>
+            </a>
+
+            <nav class="navLinks">
+                <a href="index.html#features">Features</a>
+                <a href="index.html#pricing">Pricing</a>
+                <a href="index.html#team">Team</a>
+                <a href="https://discord.gg/VEtj9YzB3n">Contact</a>
+            </nav>
+
+            <div class="navButtons">
+                <a href="https://status.example.com" target="_blank">Uptime</a>
+                <a href="https://panel.blossomcustoms.me/login" target="_blank" class="mainButton">Panel</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkoutPage">
+        <div class="heroGlow heroGlow1"></div>
+        <div class="heroGlow heroGlow2"></div>
+
+        <div class="mainContainer checkoutContainer">
+            <div class="checkoutHeader">
+                <h1>Complete Your Order</h1>
+                <p>You're one step away from premium hosting</p>
+            </div>
+
+            <div class="checkoutGrid">
+                <section class="checkoutLeft">
+                    <div class="sectionLabel">Select Plan</div>
+
+                    <div class="planTabs">
+                        <button class="planTab" data-plan="starter">Starter</button>
+                        <button class="planTab activePlan" data-plan="blossom-pro">
+                            Blossom Pro
+                            <span class="smallBadge">Popular</span>
+                        </button>
+                        <button class="planTab" data-plan="ultimate">Ultimate</button>
+                    </div>
+
+                    <div class="planDetailsCard">
+                        <div class="planHeader">
+                            <h2 id="plan-title">Blossom Pro</h2>
+                            <span class="badge" id="plan-badge">Most Popular</span>
+                        </div>
+
+                        <p class="planDescription" id="plan-description">
+                            Our most popular plan for Discord bots and web apps. Includes premium resources,
+                            automatic backups, and priority support.
+                        </p>
+
+                        <div class="featureGrid">
+                            <div class="featureItem">
+                                <div>
+                                    <strong id="feature-ram-title">1 GB RAM</strong>
+                                </div>
+                            </div>
+
+                            <div class="featureItem">
+                                <div>
+                                    <strong id="feature-storage-title">2 GB Storage</strong>
+                                </div>
+                            </div>
+
+                            <div class="featureItem">
+                                <div>
+                                    <strong id="feature-cpu-title">Unlimited CPU</strong>
+                                </div>
+                            </div>
+
+                            <div class="featureItem">
+                                <div>
+                                    <strong id="feature-traffic-title">Unlimited Traffic</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="billingSection">
+                        <div class="sectionLabel">Billing Period</div>
+
+                        <div class="durationButtons">
+                            <button class="durationButton activeDuration" data-duration="1">
+                                <span>1 Month</span>
+                            </button>
+
+                            <button class="durationButton" data-duration="3">
+                                <span>3 Months</span>
+                                <small>Save 15%</small>
+                            </button>
+
+                            <button class="durationButton" data-duration="6">
+                                <span>6 Months</span>
+                                <small>Save 20%</small>
+                            </button>
+
+                            <button class="durationButton" data-duration="12">
+                                <span>1 Year</span>
+                                <small>Save 25%</small>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <aside class="checkoutRight">
+                    <div class="summaryCard">
+                        <h3>Order Summary</h3>
+
+                        <div class="summaryRows">
+                            <div class="summaryRow">
+                                <span>Plan</span>
+                                <strong id="summary-plan">Blossom Pro</strong>
+                            </div>
+
+                            <div class="summaryRow">
+                                <span>Duration</span>
+                                <strong id="summary-duration">1 Month</strong>
+                            </div>
+
+                            <div class="summaryRow">
+                                <span>Price</span>
+                                <strong id="summary-price">R$500</strong>
+                            </div>
+                        </div>
+
+                        <div class="summaryTotal">
+                            <div>
+                                <span>Total</span>
+                            </div>
+                            <div>
+                                <strong id="summary-total">R$500</strong>
+                                <p id="summary-billing-note">Billed monthly</p>
+                            </div>
+                        </div>
+
+                        <div class="paymentMethod">
+                            <div class="sectionLabel">Payment Method</div>
+
+                            <div class="paymentBox">
+                                <div>
+                                    <strong>Robux Payment</strong>
+                                    <span>Pay with Roblox Gamepass</span>
+                                </div>
+                                <div class="paymentDot"></div>
+                            </div>
+                        </div>
+
+                        <button type="button" class="checkoutButton" id="continue-payment">
+                            Continue to Payment
+                        </button>
+
+                        <p class="termsText">By proceeding you agree to our Terms of Service</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <div class="paymentModalOverlay" id="payment-modal">
+        <div class="paymentModal">
+            <button class="modalClose" id="close-payment-modal" aria-label="Close">×</button>
+
+            <h2 class="modalTitle">Complete Payment</h2>
+
+            <div class="modalSteps">
+                <div class="modalStep active" id="step-indicator-1">
+                    <span>1</span>
+                    <p>Buy Gamepass</p>
+                </div>
+                <div class="modalStepLine"></div>
+                <div class="modalStep" id="step-indicator-2">
+                    <span>2</span>
+                    <p>Verify</p>
+                </div>
+            </div>
+
+            <div class="modalContent" id="step-1-content">
+                <div class="modalInfoBox">
+                    <h3>Purchase the required gamepass</h3>
+                    <p>
+                        Click the button below to open the Roblox gamepass page.
+                        After purchasing, return here and continue.
+                    </p>
+                </div>
+
+                <div class="modalSummaryBox">
+                    <div class="modalSummaryRow">
+                        <span>Plan</span>
+                        <strong id="modal-plan">Blossom Pro</strong>
+                    </div>
+                    <div class="modalSummaryRow">
+                        <span>Duration</span>
+                        <strong id="modal-duration">1 Month</strong>
+                    </div>
+                </div>
+
+                <a href="#" target="_blank" class="modalMainButton" id="buy-gamepass-btn">
+                    Buy on Roblox
+                </a>
+
+                <button type="button" class="modalSecondaryButton" id="go-to-verify">
+                    I've purchased the gamepass
+                </button>
+            </div>
+
+            <div class="modalContent hidden" id="step-2-content">
+                <div class="modalInfoBox">
+                    <h3>Verify your payment</h3>
+                    <p>
+                        Enter your Roblox username so we can confirm the payment and give you the correct plan.
+                    </p>
+                </div>
+
+                <div class="formGroup">
+                    <label for="roblox-username">Roblox Username</label>
+                    <input type="text" id="roblox-username" placeholder="Enter your Roblox username">
+                </div>
+
+                <button type="button" class="modalMainButton" id="submit-payment-btn">
+                    Submit Payment
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact" class="footerSection">
+        <div class="mainContainer footerGrid">
+            <div>
+                <a href="index.html" class="footerLogo">
+                    <img src="images/BlossomMainLogo.png" alt="Blossom Hosting Logo">
+                    <div class="BlossomHost1">Blossom Hosting</div>
+                </a>
+
+                <p class="footerText">
+                    High-performance Discord bot and web hosting with fast deployment and reliable infrastructure.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="footerTitle">Product</h4>
+                <ul class="footerList">
+                    <li><a href="index.html#features">Features</a></li>
+                    <li><a href="index.html#pricing">Pricing</a></li>
+                    <li><a href="index.html#team">Team</a></li>
+                    <li><a href="https://discord.gg/VEtj9YzB3n" target="_blank">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="footerTitle">Support</h4>
+                <ul class="footerList">
+                    <li><a href="#" target="_blank">Status Page</a></li>
+                    <li><a href="https://panel.blossomcustoms.me/login" target="_blank">Client Panel</a></li>
+                    <li><a href="https://discord.gg/VEtj9YzB3n" target="_blank">Discord Server</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="mainContainer footerBottom">
+            <p>© 2026 Blossom Hosting. All rights reserved.</p>
+            <div class="footerBottomLinks">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="order.js"></script>
+</body>
+
+</html>
